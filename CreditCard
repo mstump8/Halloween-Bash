@@ -1,0 +1,413 @@
+import java.util.*;
+import java.lang.Math;
+import java.util.Scanner;
+	
+  public class CreditCard {
+		public static void main(String [] args) {
+			
+			//(Part 1) Finding Credit Card Number
+
+			Scanner input = new Scanner(System.in);
+			
+			System.out.println("Welcome");
+			System.out.println("The planning of your Halloween Bash begins here.");
+			System.out.println("First, you must see how much money you have to spend for food, costumes, decor, music, and revenue.");
+			System.out.printf("\n");
+			System.out.println("Answer the Question to find your credit card number");
+			System.out.println("");
+			
+			//(Part 2) Finding Credit Card Number
+			// Fake Credit Card: 4485 3693 1234 5468
+			
+			//Group 1: Q: what is 2 + 2 = 4
+			int group_1;
+			System.out.print("What is 2 + 2: ");
+			group_1 = input.nextInt();
+			
+			if (group_1 == 4) {
+				System.out.println("First four: 4485");
+			}
+			while (group_1 != 4) {
+					System.out.println("Please Try Again");
+					System.out.print("What is 2 + 2: ");
+					group_1 = input.nextInt();	
+				if (group_1 == 4) {
+					System.out.println("First four: 4485");
+				}
+				}
+			//Group 2: Q: what is 1000 * 2000 = 2,000,000
+			int group_2;
+			System.out.println();
+			System.out.print("What is 1000 * 2000: ");
+			group_2 = input.nextInt();
+					
+			if (group_2 == 2000000) {
+				System.out.println("Second four: 3693");
+			}
+			while (group_2 != 2000000){
+					System.out.println("Please Try Again");
+					System.out.print("What is 1000 * 2000: ");
+					group_2 = input.nextInt();
+				if (group_2 == 2000000) {
+					System.out.println("Second four: 3693");
+					System.out.println("");
+				}
+				}
+			//Group 3: Q: 3 * 3 + 6 / 2 = 12
+			int group_3;
+			System.out.println();
+			System.out.print("Solve the expression: 3 * 3 + 6 / 2: ");
+			group_3 = input.nextInt();
+		
+			if (group_3 == 12) {
+				System.out.println("Third four: 1234");
+			}
+			while (group_3 != 12) {
+					System.out.println("Please Try Again");
+					System.out.print("Solve the expression: 3 * 3 + 6 / 2: ");
+					group_3 = input.nextInt();
+				if (group_3 == 12) {
+					System.out.println("Third four: 1234\n");
+				}
+				}
+			//Group 4: Q: 2^2 * 4 + 6 / 2 = 19
+			int group_4;
+			System.out.println();
+			System.out.print("Solve the expression: 2^2 * 4 + 6 / 2: ");
+			group_4 = input.nextInt();
+			
+			if (group_4 == 19) {
+				System.out.println("Last four: 5468"); 	
+		    }
+		    while (group_4 != 19) {
+		    		System.out.println("Please Try Again");
+		    		System.out.print("Solve the expression: 2^2 * 4 + 6 / 2: ");
+		    		group_4 = input.nextInt();
+		    	if (group_4 == 19) {
+		    		System.out.println("Last four: 5468");
+		    		System.out.println();
+		    	}
+				}
+		    
+		    //(Part 3) Next Part of the program:
+		    //Shows Credit Limit and number
+		    System.out.println();
+		    System.out.println("Great!! You have answered all of the questions correctly...");
+		    System.out.println("");
+		    System.out.println("Credit Card Number: ");
+		    System.out.println("4485 3693 1234 5468");
+		    System.out.println("");
+		    System.out.println("Your Credit Limit: $5000");
+		    System.out.println("Have Fun Spending!!!!!!");
+		    System.out.println();
+		    
+		    String s15 = "Budgeting Table";
+			System.out.printf("%20s\n", s15);
+			System.out.println();
+		    
+			String s1 = "Items";
+			String s2 = "MinCost";
+			String s3 = "MaxCost";
+				System.out.printf("%-10s%-10s%-20s\n", s1, s2, s3);
+
+			String s4 = "Food";
+			int x = 200;
+			int y = 800;
+				System.out.printf("%-10s%-10d%-20d\n", s4, x, y);
+			
+			String s5 = "Costumes";
+			int a = 50;
+			int b = 600;
+				System.out.printf("%-10s%-10d%-20d\n", s5, a, b);
+			
+			String s6 = "Decor";
+			int j = 50;
+			int l = 1000;
+				System.out.printf("%-10s%-10d%-20d\n", s6, j, l);
+				
+			String s7 = "Music";
+			int e = 100;
+			int n = 600;
+				System.out.printf("%-10s%-10d%-20d\n", s7, e, n);
+				
+			String s8 = "Venue";
+			int g = 850;
+			int h = 2000;
+				System.out.printf("%-10s%-10d%-20d\n", s8, g, h);
+				
+			String s9 = "Venue Options";
+				System.out.printf("%20s\n", s9);
+				System.out.println();
+				
+			;
+			String s10 = " For Outside = $700";
+			String s11 = "For Inside = $725";
+			String s12 = "For Lake Side = $850";
+			String s13 = "For Mansion = $2000";
+			String s16 = "For High School = $500";
+			String s17 = "For Club = $550";
+				System.out.printf("%20s\n", s16);
+				System.out.printf("%20s\n", s17);
+				System.out.printf("%20s\n", s10);
+				System.out.printf("%20s\n", s11);
+				System.out.printf("%20s\n", s12);
+				System.out.printf("%20s\n", s13);
+				System.out.println();
+		    
+		    //(Part 4) Spending That Limit
+		    //Food
+		    Scanner reader = new Scanner(System.in);
+		    System.out.print("");
+		  	System.out.print("Food: $");
+		  	int food = reader.nextInt();
+		  	int f = food - 5000;
+		  	System.out.println("New Limit: $" + Math.abs(f));
+		  	System.out.println("");
+		  		
+		  	// Clothes
+		  	System.out.print("Costumes: $");
+		  	int clothes = reader.nextInt();
+		  	int c = clothes - Math.abs(f);
+		  	System.out.println("New Limit: $" + Math.abs(c));
+		  	System.out.println("");
+
+		    //Decorations
+		  	System.out.print("Decorations: $");
+		  	int decor = reader.nextInt();
+		  	int d = (decor - Math.abs(c));
+		  	System.out.println("New Limit: $" + Math.abs(d));
+		  	System.out.println("");
+		  	
+		  	//Music
+		  	System.out.print("Music: $");
+		  	int music = reader.nextInt();
+		  	int m = (music - Math.abs(d));
+		  	System.out.println("New Limit: $" + Math.abs(m));
+		  	System.out.println("");
+		  	
+		  	//Revenue
+		  	System.out.print("Venue:(Reference Table) $");
+		  	int venue = reader.nextInt();
+		  	int r = (venue - Math.abs(m));
+		  	System.out.println("New limit: $" + Math.abs(r));
+		  	System.out.println("");
+		  	
+		  	System.out.println("Your new limit amount is " + Math.abs(r));
+		  	System.out.println("Do you want to put more money towards the previous items?");
+		  	System.out.println();
+		  	System.out.println("Enter 1 for no. Enter 2 for yes.");
+		  	
+		  	
+		  	int decision = input.nextInt();
+		  
+		  	if (decision == 1) {
+					System.out.println("Let's continue with the Halloween Bash");
+	  			}
+		  	else if (decision == 2) {
+					System.out.println("Credit Card Limit: " + Math.abs(r));
+			  	System.out.print("Food: $");
+			  	int food1 = input.nextInt();
+			  	int f1 = food1 - Math.abs(r);
+			  	System.out.println("New Limit: $" + Math.abs(f1));
+			  	System.out.println("");
+			  		
+			  	// Costumes
+			  	System.out.print("Costumes: $");
+			  	int clothes1 = input.nextInt();
+			  	int c1 = clothes1 - Math.abs(f1);
+			  	System.out.println("New Limit: $" + Math.abs(c1));
+			  	System.out.println("");
+
+			    //Decorations
+			  	System.out.print("Decorations: $");
+			  	int decor1 = input.nextInt();
+			  	int d1 = (decor1 - Math.abs(c1));
+			  	System.out.println("New Limit: $" + Math.abs(d1));
+			  	System.out.println("");
+			  	
+			  	//Music
+			  	System.out.print("Music: $");
+			  	int music1 = input.nextInt();
+			  	int m1 = (music1 - Math.abs(d1));
+			  	System.out.println("New Limit: $" + Math.abs(m1));
+			  	System.out.println("");
+			  	
+			  	//Revenue
+			  	System.out.print("Venue:(Reference Table) $");
+			  	int venue1 = input.nextInt();
+			  	int r1 = (venue1 - Math.abs(m1));
+			  	System.out.println("New limit: $" + Math.abs(r1));
+			  	System.out.println("");
+		  	
+			  	System.out.println();
+			  	System.out.println("Remainding Limit: " + Math.abs(r1));
+	  		}
+	  	
+		  	
+		  	while (decision != 1 && decision != 2) {
+		  			System.out.println("Enter 1 or 2");
+		  			int decision1 = input.nextInt();
+		  		
+		  			if (decision1 == 1) {
+	  				System.out.println("Let's continue with the Halloween Bash");
+	  				break;
+		  			}
+		  			
+		  			else if (decision1 == 2) {
+	  				System.out.println("Credit Card Limit: " + Math.abs(r));
+				  	System.out.print("Food: $");
+				  	int food1 = input.nextInt();
+				  	int f1 = food1 - Math.abs(r);
+				  	System.out.println("New Limit: $" + Math.abs(f1));
+				  	System.out.println("");
+				  		
+				  	// Costumes
+				  	System.out.print("Costumes: $");
+				  	int clothes1 = input.nextInt();
+				  	int c1 = clothes1 - Math.abs(f1);
+				  	System.out.println("New Limit: $" + Math.abs(c1));
+				  	System.out.println("");
+
+				    //Decorations
+				  	System.out.print("Decorations: $");
+				  	int decor1 = input.nextInt();
+				  	int d1 = (decor1 - Math.abs(c1));
+				  	System.out.println("New Limit: $" + Math.abs(d1));
+				  	System.out.println("");
+				  	
+				  	//Music
+				  	System.out.print("Music: $");
+				  	int music1 = input.nextInt();
+				  	int m1 = (music1 - Math.abs(d1));
+				  	System.out.println("New Limit: $" + Math.abs(m1));
+				  	System.out.println("");
+				  	
+				  	//Revenue
+				  	System.out.print("Venue:(Reference Table) $");
+				  	int venue1 = input.nextInt();
+				  	int r1 = (venue1 - Math.abs(m1));
+				  	System.out.println("New limit: $" + Math.abs(r1));
+				  	System.out.println("");
+			  	
+				  	System.out.println();
+				  	System.out.println("Remainding Limit: " + Math.abs(r1));
+				  	
+				  	break;
+		  			}
+		  		}	
+		  		
+		  	//(Part 5) Showing your spending
+		  	System.out.println("\n");
+			System.out.println("Now, you must choose how many attendees you plan on having.");
+			System.out.printf("\n");
+			
+			//input attendance amount
+			System.out.println("How many people would you like to attend?");
+			System.out.println("Pick a amount between 0-500");
+				double attendance = input.nextDouble();	
+			System.out.println("Your attendance amount is as follows: " + attendance);
+			System.out.println();
+			System.out.println();
+			
+			System.out.println("Now that you have chosen your party size, who would you like to invite?");
+			System.out.println("Enter 1 for family");
+			System.out.println("Enter 2 for friends");
+			System.out.println("Enter 3 for both");
+				double famfriboth = input.nextDouble();
+				if (famfriboth == 1) 
+					System.out.println("You have chosen to invite only family to your Halloween Bash");
+				
+				else if (famfriboth == 2) 
+					System.out.println("You have chosen to invite only friends to your Halloween Bash");
+				
+				else if (famfriboth == 3) 
+					System.out.println("You have chosen to invite both family and friends to your Halloween Bash");
+				else {
+					System.out.println("Try Again.");
+					System.out.println("Enter 1 for family");
+					System.out.println("Enter 2 for friends");
+					System.out.println("Enter 3 for both");
+				}
+				
+					while (famfriboth != 1 && famfriboth != 2 && famfriboth > 3) {
+						double again = input.nextDouble();
+						
+					if (again == 1) {
+							System.out.println("You have chosen to invite only family to your Halloween Bash");
+						break;
+						}
+						else if (again == 2) {
+							System.out.println("You have chosen to invite only friends to your Halloween Bash");
+						break;
+						}
+						else if (again == 3) {
+							System.out.println("You have chosen to invite both family and friends to your Halloween Bash");
+						break;
+						}
+						else {
+							System.out.println("Try Again.");
+						}
+			
+			}
+			System.out.println();
+			System.out.println("Great, which time would you prefer the party to start and end?");
+			
+			int time;
+			
+			System.out.println("Input 1 for 4:30pm-11:00pm");
+			System.out.println("Input 2 for 6:00pm-1:00am");
+			System.out.println("Input 3 for 8:00pm-2:00am");
+			System.out.println("\nEnter the number that correlates with your time preference");
+				time = input.nextInt();
+			
+			switch(time) {
+			
+			case 1 : System.out.println("You have chosen a venue reservation for 4:30pm-11:00pm");
+				break;
+			case 2 : System.out.println("You have chosen a venue reservation for 6:00pm-1:00am");
+				break;
+			case 3 : System.out.println("You have chosen a venue reservation for 8:00pm-2:00am");
+				break;
+			
+			default : System.out.println("Invalid Input");
+				while (time != 1 && time != 2 && time != 3) {
+					System.out.println("Input 1 for 4:30pm-11:00pm");
+					System.out.println("Input 2 for 6:00pm-1:00am");
+					System.out.println("Input 3 for 8:00pm-2:00am");
+						int time1 = input.nextInt();
+					switch(time1) {
+					
+					case 1 : System.out.println("You have chosen a venue reservation for 4:30pm-11:00pm");
+						break;
+					case 2 : System.out.println("You have chosen a venue reservation for 6:00pm-1:00am");
+						break;
+					case 3 : System.out.println("You have chosen a venue reservation for 8:00pm-2:00am");
+					break;
+					}
+				break;
+			}
+		
+				}
+		System.out.println();
+		System.out.print("Your venue and time are secured.");
+		System.out.println();
+		System.out.println("Congratulations. You are at the end of your planning. The last and final step is to send out your " + attendance + " invitations");
+		System.out.println("\nGet ready to send them out");
+		System.out.println();
+		System.out.println("Enter 1 to send out your invitations");
+			int send = input.nextInt();
+		sent(send);
+
+		}
+		public static void sent (double x) {
+			if (x == 1) {
+				System.out.println("Loading...");
+				System.out.println("Loading...");
+				System.out.println("Loading...");
+				System.out.println("INVITATIONS SENT");
+			}
+			
+		}
+		}
+
+
